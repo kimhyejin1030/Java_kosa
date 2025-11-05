@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Quiz_ex04 {
 	public static void main(String[] args) {
+		/*
+		 * 문제 ] 이름 입력 받고, 국어/영어/전산 점수 입력받아서
+		 * 총점 평균까지 구하는 프로그램 작성
+		 */
 		// 평균 60점, 과락 40점 불합격 아니면 합격
 		
 		Scanner sc = new Scanner(System.in);
