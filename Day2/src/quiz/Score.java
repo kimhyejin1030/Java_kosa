@@ -19,28 +19,54 @@ public class Score {
 		int com = sc.nextInt();
 		
 		int sum = kor + eng + com;
-		double ave = sum / 3;
+		double avg = sum / 3;
 		
-		System.out.println();
-		System.out.println(name + " 님의 성적표 *******");
-		System.out.println("국어 : " + kor + ", 영어" + eng + ", 전산" + com);
-		System.out.println("총점 : " + sum + ", 평균 : " + ave);
+//		System.out.println();
+//		System.out.println(name + " 님의 성적표 *******");
+//		System.out.println("국어 : " + kor + ", 영어" + eng + ", 전산" + com);
+//		System.out.println("총점 : " + sum + ", 평균 : " + avg);
 		
-		if(ave>=90) {
-			System.out.println("A학점입니다.");
-		} else if (ave>= 80) {
-			System.out.println("B학점입니다.");
-		} else if (ave >= 70) {
-			System.out.println("C학점입니다.");
-		} else if (ave >= 60) {
-			System.out.println("D학점입니다.");
-		} else {
-			System.out.println("F학점입니다.");
+		char grade = ' ';
+		
+//		if(avg=90) {
+//			grade = 'A';
+//		} else if (avg>= 80) {
+//			grade = 'B';
+//		} else if (avg >= 70) {
+//			grade = 'C';
+//		} else if (avg >= 60) {
+//			grade = 'D';
+//		} else {
+//			grade = 'F';
+//		}
+		
+		switch ((int)avg / 10) {
+			case 10:
+			case 9: grade = 'A'; break;
+			case 8: grade = 'B'; break;
+			case 7: grade = 'C'; break;
+			case 6: grade = 'D'; break;
+			default: grade = 'F'; break;
+		
 		}
 		
+		if(avg>= 60) {
+			if(kor >= 40 && eng >= 40 && com >= 40) {
+				System.out.printf("\n모든 과목이 40점 이상이며, 총점은 %d, 평균은 %.1f로 [합격]입니다.\n",sum,avg);
+			} else {
+				System.out.printf("평균이 %.1f이지만 ",avg);
+				if(kor < 40) System.out.println("국어" + kor + "점");
+				if(kor < 40) System.out.println("영어" + eng + "점");
+				if(kor < 40) System.out.println("전산" + com + "점");
+				System.out.println("으로 [과락]입니다.");
+			}
+		} else {
+			System.out.printf("평균이 %.1f로 [평균 미달 탈락] 입니다.\n", avg);
+		}
 		
-		
-		
+		System.out.println("\n******" + name+"님의 성적표******");
+		System.out.println("국어 : " + kor + ", 영어 :" + eng + ", 전산 : " + com);
+		System.out.println("총점 : " + sum + ", 평균 : " + avg + ", 학점 : " + grade);
 	}
 
 }

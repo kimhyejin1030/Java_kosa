@@ -4,6 +4,31 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MainEntry {
+	public static void main(String[] args) 
+			throws ArithmeticException, InputMismatchException, Exception { // 제일 큰 예외는 제일 뒤로 적기
+		System.out.println("x, y = ");
+		int x, y, result;
+	
+		x = new Scanner(System.in).nextInt();
+		y = new Scanner(System.in).nextInt();
+		
+		result = x / y; // 예외발생 소지 있음
+		
+		System.out.println(result);
+		
+		System.out.println("0으로 나눌 수 없습니다");
+			
+	}
+
+} // catch문이 여러 개일 때
+
+/*
+package ex04_exception;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class MainEntry {
 	public static void main(String[] args) {
 		System.out.println("x, y = ");
 		int x, y, result;
@@ -31,6 +56,7 @@ public class MainEntry {
 	}
 
 } // catch문이 여러 개일 때
+*/
 
 
 
